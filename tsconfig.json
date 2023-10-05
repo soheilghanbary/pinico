@@ -19,9 +19,25 @@
       }
     ],
     "paths": {
+      "@lib/*": ["./src/lib/*"],
+      "@config/*": ["./src/config/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@services/*": ["./src/services/*"],
+      "@schemas/*": ["./src/schemas/*"],
+      "@ui/*": ["./src/components/ui/*"],
+      "@sass/*": ["./src/sass/*"],
+      "@components/*": ["./src/components/*"],
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "tailwind.config.js"
+  ],
   "exclude": ["node_modules"]
 }
