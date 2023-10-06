@@ -1,17 +1,8 @@
 import Link from "next/link"
-import { Icons } from "@components/icons"
 import { Logo } from "@components/Logo"
 import { CreatePinModal } from "@components/pin/CreatePinModal"
+import { SignInModal } from "@components/SignInModal"
 import { ThemeToggle } from "@components/ThemeToggle"
-import { Button } from "@ui/button"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@ui/dialog"
 
 interface SiteLinkProps {
   label: string
@@ -31,7 +22,7 @@ const SiteLink = ({ label, href }: SiteLinkProps) => (
 
 export const SiteHeader = () => {
   return (
-    <header className="flex items-center justify-between">
+    <header className="flex items-center justify-between rounded-lg">
       <Logo />
       <ul className="flex flex-1 items-center justify-center">
         <SiteLink href={"/"} label={"Home"} />
@@ -41,38 +32,9 @@ export const SiteHeader = () => {
       </ul>
       <nav className="flex items-center space-x-4">
         <ThemeToggle />
-        {/* <SignIn /> */}
+        <SignInModal />
         <CreatePinModal />
       </nav>
     </header>
   )
 }
-
-const SignIn = () => (
-  <Dialog>
-    <DialogTrigger asChild>
-      <Button rounded>
-        <Icons.login className="mr-2 h-4 w-4" />
-        Sign In
-      </Button>
-    </DialogTrigger>
-    <DialogContent className="max-w-sm">
-      <DialogHeader>
-        <DialogTitle className="text-center">Welcome Back</DialogTitle>
-        <DialogDescription className="text-center">
-          Sign in your account
-        </DialogDescription>
-      </DialogHeader>
-      <div className="grid grid-cols-2 gap-4">
-        <Button>
-          <Icons.github className="mr-2 h-4 w-4" />
-          Github
-        </Button>
-        <Button variant={"outline"}>
-          <Icons.google className="mr-2 h-4 w-4" />
-          Google
-        </Button>
-      </div>
-    </DialogContent>
-  </Dialog>
-)

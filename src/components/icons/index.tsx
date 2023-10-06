@@ -1,4 +1,5 @@
 import {
+  Aperture,
   BadgePlus,
   BarChart2,
   Bell,
@@ -88,7 +89,7 @@ export const Icons = {
   download: Download,
   trash: Trash2,
   upload: UploadCloud,
-  logo: LeafyGreen,
+  logo: Aperture,
   date: Calendar,
   clock: Clock,
   close: X,
